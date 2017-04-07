@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shivam.foodle.DetailActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/detailActivityToolbar"
+            android:layout_width="match_parent"
+
+            android:background="@android:color/transparent"
+            android:layout_height="?attr/actionBarSize"
+            android:titleTextColor="@android:color/white">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/detailActivityRecipeImageView"
+                android:src="@drawable/sandwich_card_view"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Sandwich Recipe"
+                android:textColor="@android:color/white"
+                android:textSize="22dp"
+                android:singleLine="false"
+                android:id="@+id/detailActivityRecipeNameTextView"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="?attr/actionBarSize"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/DetailActivityratingStar"
+                android:src="@drawable/home_stream_card_view_rating_image"
+                android:layout_below="@id/detailActivityRecipeNameTextView"
+                android:layout_marginLeft="27dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.5"
+                android:id="@+id/detailActivityRatingTextView"
+                android:textColor="@android:color/white"
+                android:layout_below="@id/detailActivityRecipeNameTextView"
+                android:layout_toRightOf="@id/DetailActivityratingStar"
+                android:layout_marginLeft="2dp"/>
+
+            <com.like.LikeButton
+                android:id="@+id/likeButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:icon_size="20dp"
+                android:layout_toRightOf="@id/detailActivityRecipeNameTextView"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:layout_marginLeft="30dp"
+                android:clickable="true"
+                app:icon_type="heart"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/detail_activity_cooking_icon"
+                    android:layout_marginLeft="25dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cook Time"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 min"
+                        android:id="@+id/detailActivityCookTimeTextView"
+                        android:layout_marginLeft="5dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/detail_activity_calorie_icon"
+                    android:layout_marginLeft="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calories"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="298Kcal"
+                        android:id="@+id/detailActivityCaloriesTextView"
+                        android:layout_marginLeft="5dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ingredients"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 Table Spoon Garlic, 1 Table Spoon salt"
+                    android:singleLine="false"
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/detailActivityIngredientsTextView"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="5dp"
+                    android:alpha="0.8"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Instructions"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 Table Spoon Garlic, 1 Table Spoon salt"
+                    android:singleLine="false"
+                    android:layout_marginLeft="30dp"
+                    android:id="@+id/detailActivityInstructionsTextView"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="5dp"
+                    android:alpha="0.8"
+                    android:layout_marginBottom="10dp"/>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
