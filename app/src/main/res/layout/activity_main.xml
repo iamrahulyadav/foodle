@@ -14,7 +14,7 @@
         android:src="@drawable/login_page_background_image" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -26,29 +26,10 @@
             android:alpha="0.6"
             android:gravity="center"
             android:text="FOODLE"
+            android:fontFamily="cursive"
             android:textColor="@android:color/background_dark"
             android:textSize="52sp"
             android:textStyle="italic" />
-
-        <ImageView
-            android:id="@+id/mainActivityFacebookSignInButton"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_below="@id/mainActivityTextView"
-            android:layout_marginTop="320dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:src="@drawable/login_page_facebook_sign_in_button" />
-
-        <ImageView
-            android:id="@+id/mainActivityGoogleSignInButton"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_below="@id/mainActivityTextView"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:src="@drawable/logi_page_google_sign_in_button" />
 
 
     </LinearLayout>

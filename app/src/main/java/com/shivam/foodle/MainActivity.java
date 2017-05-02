@@ -3,6 +3,7 @@ package com.shivam.foodle;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,11 +14,9 @@ import com.shivam.foodle.DatabaseHandler.DatabaseHandler;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView facebookSignInButton;
-    private ImageView googleSignInButton;
-
     public SharedPreferences sharedPreferences;
     public static final String MYPREFERENCES="myPrefs";
+    private static int SPLASH_TIME_OUT = 3000;
 
 
     @Override
@@ -27,27 +26,17 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences=getApplicationContext().getSharedPreferences(MYPREFERENCES, Context.MODE_PRIVATE);
 
-        facebookSignInButton=(ImageView) findViewById(R.id.mainActivityFacebookSignInButton);
-        googleSignInButton=(ImageView)findViewById(R.id.mainActivityGoogleSignInButton);
-
-        facebookSignInButton.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
+            public void run() {
+                finish();
                 SharedPreferences.Editor editor=sharedPreferences.edit();
                 editor.putString("SharedPreferencesValue","true");
                 editor.commit();
                 Intent intent=new Intent(getBaseContext(),HomeStreamActivity.class);
                 startActivity(intent);
-
             }
-        });
-
-        googleSignInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
-
+        }, SPLASH_TIME_OUT);
 
     }
 }
